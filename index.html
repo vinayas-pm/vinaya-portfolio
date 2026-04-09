@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinaya Sawant — Lead Product Manager</title>
+  <meta name="description" content="Lead Product Manager with 11+ years building B2B platforms, marketplace integrations, and AI-powered products across India and APAC." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --ink:       #0e0e0e;
+      --paper:     #f5f2ec;
+      --accent:    #c84b2f;
+      --muted:     #7a7469;
+      --border:    #ddd8d0;
+      --card-bg:   #ffffff;
+
+      --f-display: 'DM Serif Display', Georgia, serif;
+      --f-body:    'DM Sans', system-ui, sans-serif;
+
+      --max:       1160px;
+      --nav-h:     64px;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--f-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: var(--paper);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 2rem;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--f-display);
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-h) + 4rem);
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-name {
+      font-family: var(--f-display);
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-tagline {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent); }
+    .btn-outline {
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
+
+    .hero-meta {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat .num {
+      font-family: var(--f-display);
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .hero-stat .label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-family: var(--f-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    /* ── STORY ── */
+    #story { background: var(--paper); }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+    .story-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .story-card:last-child { border-right: none; }
+    .story-card-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .story-card h3 {
+      font-family: var(--f-display);
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .story-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .story-num {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      font-family: var(--f-display);
+      font-size: 3rem;
+      color: var(--border);
+      line-height: 1;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta {
+      padding-top: 0.2rem;
+    }
+    .exp-period {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-family: var(--f-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .exp-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+      color: var(--muted);
+    }
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .exp-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .exp-bullets li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+    .exp-clients {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .exp-clients span {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ── WORK / CASE STUDIES ── */
+    #work { background: var(--paper); }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .work-card {
+      background: var(--paper);
+      padding: 2.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .work-card:hover { background: var(--card-bg); }
+    .work-num {
+      font-family: var(--f-display);
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .work-card h3 {
+      font-family: var(--f-display);
+      font-size: 1.4rem;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .work-card .work-type {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .work-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .work-metrics {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .work-metric .m-num {
+      font-family: var(--f-display);
+      font-size: 1.4rem;
+      color: var(--ink);
+    }
+    .work-metric .m-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+    .work-expand {
+      display: none;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .work-expand.open { display: block; }
+    .work-section-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .work-expand p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .work-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 1rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--f-body);
+      padding: 0;
+    }
+    .work-toggle .arrow { transition: transform 0.2s; }
+    .work-toggle.open .arrow { transform: rotate(180deg); }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+    .skill-group {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+    }
+    .skill-group:last-child { border-right: none; }
+    .skill-group-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .skill-tag {
+      font-size: 0.75rem;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.65rem;
+      border-radius: 2px;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    /* ── WRITING ── */
+    #writing { background: var(--paper); }
+    .writing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .writing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .writing-platform {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .writing-card p {
+      font-size: 0.88rem;
+      line-height: 1.75;
+      color: var(--muted);
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .writing-link {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .writing-link:hover { text-decoration: underline; }
+    .writing-placeholder {
+      border: 1px dashed var(--border);
+      background: transparent;
+    }
+    .writing-placeholder p {
+      color: var(--border);
+      font-style: italic;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    #contact .section-label { color: #666; }
+    #contact .section-heading { color: var(--paper); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-desc {
+      font-size: 1rem;
+      color: #9a9690;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .contact-locations {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .contact-loc {
+      font-size: 0.75rem;
+      border: 1px solid #333;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      color: #9a9690;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-link-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .contact-link-item .cl-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .contact-link-item a {
+      font-size: 0.95rem;
+      color: var(--paper);
+      transition: color 0.2s;
+    }
+    .contact-link-item a:hover { color: var(--accent); }
+    .contact-roles {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #222;
+    }
+    .contact-roles-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+    .contact-role-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .contact-role-list li {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #9a9690;
+      padding-left: 0.85rem;
+      position: relative;
+    }
+    .contact-role-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+    .contact-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 2px;
+      margin-top: 2rem;
+      transition: opacity 0.2s;
+    }
+    .contact-cta:hover { opacity: 0.85; }
+
+    /* ── RANGE ── */
+    #range { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .range-intro {
+      max-width: 680px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 3.5rem;
+      font-weight: 300;
+    }
+    .range-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+    .range-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .range-item:last-child { border-right: none; }
+    .range-item:nth-child(n+4) { border-top: 1px solid var(--border); }
+    .range-emoji {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+    .range-item h4 {
+      font-family: var(--f-display);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .range-item p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .range-quote {
+      margin-top: 3rem;
+      padding: 2rem 2.5rem;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      font-family: var(--f-display);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 900px) {
+      .range-grid { grid-template-columns: 1fr 1fr; }
+      .range-item:nth-child(2) { border-right: none; }
+      .range-item:nth-child(n+3) { border-top: 1px solid var(--border); }
+      .range-item:nth-child(odd) { border-right: 1px solid var(--border); }
+      .range-item:nth-child(even) { border-right: none; }
+    }
+    @media (max-width: 560px) {
+      .range-grid { grid-template-columns: 1fr; }
+      .range-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .range-item:last-child { border-bottom: none; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      color: #333;
+      text-align: center;
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .story-grid { grid-template-columns: 1fr; }
+      .story-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .story-card:last-child { border-bottom: none; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .skill-group:nth-child(2) { border-right: none; }
+      .skill-group:nth-child(3) { border-right: 1px solid var(--border); }
+      .writing-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-meta { gap: 1.5rem; }
+    }
+    @media (max-width: 560px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-group { border-right: none; border-bottom: 1px solid var(--border); }
+      .skill-group:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Vinaya Sawant</a>
+      <ul class="nav-links">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#range">Range</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="Vinaya_Sawant_Resume.pdf" download class="nav-cta">Download Resume</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+
+      <h1 class="hero-name">
+        Vinaya<br><em>Sawant</em>
+      </h1>
+      <p class="hero-tagline">
+        Lead Product Manager. 11 years building B2B platforms that integrate, scale, and hold together under pressure — across 20+ marketplaces and 5 countries.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View Work</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="Vinaya_Sawant_Resume.pdf" download class="btn-outline">Download Resume</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-stat">
+          <div class="num">11+</div>
+          <div class="label">Years in Product</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">20+</div>
+          <div class="label">Marketplaces Integrated</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">5</div>
+          <div class="label">APAC Countries Launched</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">10M+</div>
+          <div class="label">Merchants Impacted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="container">
+      <div class="section-label">Origin Story</div>
+      <h2 class="section-heading">How I got<br><em>here</em></h2>
+      <div class="story-grid fade-in">
+        <div class="story-card">
+          <span class="story-num">01</span>
+          <div class="story-card-label">The System Thinker</div>
+          <h3>I've always been drawn to how things connect</h3>
+          <p>From mapping hospital IPD workflows at 24 to designing marketplace integration pipelines at 34 — the instinct has been the same: find where the system breaks, understand exactly why, and fix it in a way that doesn't create three new problems. Complexity doesn't intimidate me. It's where I do my best work.</p>
+        </div>
+        <div class="story-card">
+          <span class="story-num">02</span>
+          <div class="story-card-label">The Builder</div>
+          <h3>Platform thinking over feature shipping</h3>
+          <p>At Fynd, I didn't just manage a roadmap — I rebuilt a platform from scratch. Konnect v2 went from a legacy monolith to a modular, API-first integration layer powering 20+ marketplaces. That required holding together engineering, design, QA, and business stakeholders through 9 production releases — zero major failures. I've learned that the quality of your system design determines how much chaos you can absorb later.</p>
+        </div>
+        <div class="story-card">
+          <span class="story-num">03</span>
+          <div class="story-card-label">Where I Am Now</div>
+          <h3>Looking for the next platform to own</h3>
+          <p>Lead PM at Fynd, actively exploring what's next. I'm drawn to B2B SaaS, integrations, and platform roles where the product work is genuinely technical and the decisions have real operational weight. Open to roles across Mumbai, Pune, Bengaluru — and Japan if relocation is supported.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label">Where I've Shipped Things</div>
+      <h2 class="section-heading">The work that<br><em>moved the needle</em></h2>
+      <div class="exp-list">
+
+        <div class="exp-item fade-in">
+          <div class="exp-meta">
+            <div class="exp-period">Jun 2022 — Present</div>
+            <div class="exp-company">Fynd</div>
+            <span class="exp-tag">B2B SaaS · Mumbai</span>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">Lead Product Manager — Konnect Platform</div>
+            <p class="exp-desc">Owned end-to-end product strategy for Konnect, Fynd's B2B SaaS marketplace integration platform. Led the v2 ground-up rebuild — from modular architecture to AI-powered seller tooling.</p>
+            <ul class="exp-bullets">
+              <li>Spearheaded Konnect v2 rebuild: modular, API-first architecture replacing a legacy monolith; managed 9 production releases across multiple engineering squads</li>
+              <li>Launched Konnect Copilot — GPT-powered assistant embedded in the platform — reducing seller support tickets by 18% and cutting prototyping time by 50%</li>
+              <li>Drove Lazada APAC expansion: rolled out marketplace integration to 5 countries (Singapore, Thailand, Philippines, Vietnam, Indonesia)</li>
+              <li>Shipped full Flipkart v2 integration suite, Amazon Easy Ship, and Amazon Ship By Marketplace API migration; 20+ marketplace integrations total</li>
+              <li>Defined Multi-SKU channel mapping architecture enabling sellers to assign multiple Channel IDs per SKU — new data models, APIs, bulk flows, and real-time pipelines</li>
+              <li>Led squad of 12+ engineers, QA, and designers; mentored 2 Associate PMs; won Fynd Star Award 2023 and 2024; promoted PM2 → PM3</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item fade-in">
+          <div class="exp-meta">
+            <div class="exp-period">2022 — 2023</div>
+            <div class="exp-company">Fynd × Reliance</div>
+            <span class="exp-tag">B2B Commerce · Mumbai</span>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">Senior Product Manager — METRO Cash & Carry India</div>
+            <p class="exp-desc">One of 3 PMs on India's first cash-and-carry wholesale brand digitization — METRO Wholesale on the Jio Commerce Platform (Reliance Retail). Delivered a fully functional B2B e-commerce platform from zero.</p>
+            <ul class="exp-bullets">
+              <li>Launched platform with 45K merchants migrated, 7,634 brands onboarded, 70K SKUs uploaded, and 500+ orders at launch across 31 METRO stores</li>
+              <li>Delivered promotions engine (BOGO, ladder pricing, delivery thresholds) impacting 10M+ Kirana merchants — 11% cart size increase, 14% reduction in sub-threshold orders</li>
+              <li>Built merchant migration system moving 10M+ Kirana merchants from Reliance Portal; implemented Kafka pipeline transferring 3.6M+ records/day with 94% downtime reduction</li>
+              <li>Designed cohort engine using behavioral segmentation for dynamic payment restrictions, delivery charges, and purchase limits</li>
+              <li>Integrated JioOnePay and RONE Wallet; built multi-MOP payment flow and multilingual support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item fade-in">
+          <div class="exp-meta">
+            <div class="exp-period">Jan 2020 — Jun 2022</div>
+            <div class="exp-company">Annex Cloud</div>
+            <span class="exp-tag">B2B2C SaaS · Pune</span>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">Product Manager — Loyalty Platform (Immply Technologies)</div>
+            <p class="exp-desc">Owned product for a white-label B2B2C loyalty SaaS platform serving enterprise clients across 11 countries. Delivered configuration, API, and campaign features across a complex multi-tenant architecture.</p>
+            <ul class="exp-bullets">
+              <li>Built configuration portal with 183 settings, 11 screens, and 4 layout types — enabling 35+ enterprise clients to self-configure loyalty programs without engineering dependency</li>
+              <li>Automated ESP integrations across enterprise clients — reduced onboarding TAT by 60%</li>
+              <li>Delivered loyalty APIs (Get Points, Expiring Points, Campaign Status) — 15% reduction in point wastage, 22% uplift in campaign engagement</li>
+              <li>Managed compliance configuration across 11 countries with regional eligibility, expiration, and reward logic</li>
+            </ul>
+            <div class="exp-clients">Clients: <span>[ To be added — please confirm which are public-safe ]</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / CASE STUDIES -->
+  <section id="work">
+    <div class="container">
+      <div class="section-label">Featured Work</div>
+      <h2 class="section-heading">Products I've<br><em>owned end-to-end</em></h2>
+      <div class="work-grid">
+
+        <!-- Card 1 -->
+        <div class="work-card fade-in">
+          <div class="work-num">01</div>
+          <div class="work-type">Platform Architecture · B2B SaaS</div>
+          <h3>Konnect v2 Rebuild</h3>
+          <p>A ground-up rebuild of Fynd's marketplace integration platform — from a legacy monolith to a modular, API-first system powering 20+ marketplace integrations and 100K+ daily transactions.</p>
+          <div class="work-metrics">
+            <div class="work-metric">
+              <div class="m-num">9</div>
+              <div class="m-label">Production releases, zero failures</div>
+            </div>
+            <div class="work-metric">
+              <div class="m-num">20+</div>
+              <div class="m-label">Marketplace integrations</div>
+            </div>
+          </div>
+          <button class="work-toggle" onclick="toggleWork(this)">
+            Read more <span class="arrow">↓</span>
+          </button>
+          <div class="work-expand">
+            <div class="work-section-title">The Problem</div>
+            <p>Konnect v1 was a monolithic platform — hard to extend, difficult to debug, and slow to onboard new marketplaces. Each new integration required significant engineering effort with no shared primitives.</p>
+            <div class="work-section-title">The Approach</div>
+            <p>Defined a modular, extension-based architecture using FDK (Fynd Developer Kit) for integration lifecycle management, Temporal for workflow orchestration on long-running tasks, and a Kafka-based message bus for event-driven sync. Consolidated all Konnect services into a single monorepo — konnect-admin, konnect-console, konnect-gateway, konnect-message-bus, KLAS, and Nightwing.</p>
+            <div class="work-section-title">The Outcome</div>
+            <p>Platform now supports 20+ live marketplace integrations, Lazada across 5 APAC countries, and handles 100K+ transactions daily. Delivered 9 production releases with structured DRI-based deployment coordination across multiple engineering teams.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="work-card fade-in">
+          <div class="work-num">02</div>
+          <div class="work-type">AI Product · Seller Tooling</div>
+          <h3>Konnect Copilot</h3>
+          <p>A GPT-powered assistant embedded directly inside Konnect — guiding sellers through channel setup, product mappings, and analytics queries in real time, without needing to raise a support ticket.</p>
+          <div class="work-metrics">
+            <div class="work-metric">
+              <div class="m-num">18%</div>
+              <div class="m-label">Reduction in support tickets</div>
+            </div>
+            <div class="work-metric">
+              <div class="m-num">50%</div>
+              <div class="m-label">Faster prototyping</div>
+            </div>
+          </div>
+          <button class="work-toggle" onclick="toggleWork(this)">
+            Read more <span class="arrow">↓</span>
+          </button>
+          <div class="work-expand">
+            <div class="work-section-title">The Problem</div>
+            <p>Sellers and internal admins were raising high volumes of support tickets for tasks that were documented — but the documentation was scattered and hard to navigate during active workflows.</p>
+            <div class="work-section-title">The Approach</div>
+            <p>Wrote the one-pager proposal and drove the product from concept to ship. Managed documentation indexing strategy — robots.txt, sitemap configuration — to ensure the model was trained exclusively on Konnect documentation, improving response accuracy. Designed the assistant's UX to surface contextual guidance without breaking the seller's primary workflow.</p>
+            <div class="work-section-title">The Outcome</div>
+            <p>18% reduction in seller and admin support tickets. 50% improvement in prototyping speed for new feature validation. Became the foundation for further AI-native features within the platform.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="work-card fade-in">
+          <div class="work-num">03</div>
+          <div class="work-type">B2B Commerce · Reliance Retail</div>
+          <h3>METRO Wholesale Platform</h3>
+          <p>India's first cash-and-carry wholesale brand digitization — delivered on Jio Commerce Platform as one of 3 PMs. From zero to a fully operational B2B e-commerce platform serving Kirana merchants across 31 stores.</p>
+          <div class="work-metrics">
+            <div class="work-metric">
+              <div class="m-num">45K</div>
+              <div class="m-label">Merchants at launch</div>
+            </div>
+            <div class="work-metric">
+              <div class="m-num">10M+</div>
+              <div class="m-label">Merchants impacted by promotions</div>
+            </div>
+          </div>
+          <button class="work-toggle" onclick="toggleWork(this)">
+            Read more <span class="arrow">↓</span>
+          </button>
+          <div class="work-expand">
+            <div class="work-section-title">The Problem</div>
+            <p>METRO Cash & Carry India had no digital commerce presence. Kirana merchants were managing wholesale ordering manually — no platform, no promotions engine, no merchant data.</p>
+            <div class="work-section-title">The Approach</div>
+            <p>Defined and delivered a full B2B platform feature suite: user hierarchy, dynamic and ladder pricing, contract pricing per merchant, multi-MOP payment integration (JioOnePay, RONE Wallet), and a behavioral cohort engine for personalized delivery charges, payment restrictions, and recommendations. Built a Kafka pipeline for 3.6M+ records/day with alerting that reduced downtime by 94%.</p>
+            <div class="work-section-title">The Outcome</div>
+            <p>Launched with 45K merchants, 7,634 brands, 70K SKUs, and 500+ orders. Promotions engine drove 11% cart size increase and 14% reduction in low-value orders. Kafka alerting reduced platform downtime by 94%.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-label">Skills & Tools</div>
+      <h2 class="section-heading">The full<br><em>toolkit</em></h2>
+      <div class="skills-grid fade-in">
+        <div class="skill-group">
+          <div class="skill-group-label">Platform & Integration</div>
+          <div class="skill-tags">
+            <span class="skill-tag">API Contract Design</span>
+            <span class="skill-tag">Marketplace Integrations</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Amazon SP-API</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">Temporal Workflows</span>
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">OMS / IMS</span>
+            <span class="skill-tag">Modular Architecture</span>
+            <span class="skill-tag">OAuth 2.0</span>
+            <span class="skill-tag">RBAC</span>
+            <span class="skill-tag">Multi-tenant SaaS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">AI & Automation</div>
+          <div class="skill-tags">
+            <span class="skill-tag">GPT-powered Features</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">RAG Workflows</span>
+            <span class="skill-tag">AI UX Design</span>
+            <span class="skill-tag">Claude Code</span>
+            <span class="skill-tag">Cursor AI</span>
+            <span class="skill-tag">Lovable</span>
+            <span class="skill-tag">OpenAI APIs</span>
+            <span class="skill-tag">Vibe Coding</span>
+            <span class="skill-tag">ChatGPT</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Data & Analytics</div>
+          <div class="skill-tags">
+            <span class="skill-tag">GA4</span>
+            <span class="skill-tag">Looker Studio</span>
+            <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">Mixpanel</span>
+            <span class="skill-tag">Cohort Analysis</span>
+            <span class="skill-tag">Funnel Analysis</span>
+            <span class="skill-tag">A/B Testing</span>
+            <span class="skill-tag">Zenith DB</span>
+            <span class="skill-tag">Geckoboard</span>
+            <span class="skill-tag">Basic SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Execution & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PRD / BRD Writing</span>
+            <span class="skill-tag">Roadmapping</span>
+            <span class="skill-tag">OKRs</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Release Management</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Stakeholder Mgmt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section id="range">
+    <div class="container">
+      <div class="section-label">Beyond the Work</div>
+      <h2 class="section-heading">Range</h2>
+      <p class="range-intro">
+        I believe people should have range. Not because it looks good on paper — but because moving across unfamiliar things teaches you how to learn, how to fail without stopping, and how to carry instincts from one domain into another. That's also what makes a better PM.
+      </p>
+      <div class="range-grid">
+        <div class="range-item fade-in">
+          <div class="range-emoji">🇯🇵</div>
+          <h4>Japanese</h4>
+          <p>Studying at JLPT N5 level. Not because I needed to — because the structure of a completely different language forces your brain to work differently. And I'm open to relocating to Japan.</p>
+        </div>
+        <div class="range-item fade-in">
+          <div class="range-emoji">🏊</div>
+          <h4>Swimming & Surfing</h4>
+          <p>I was scared of water. I learned to swim anyway. Then I learned to surf. Fear of something is rarely a good reason not to try it — that's a rule I apply at work too.</p>
+        </div>
+        <div class="range-item fade-in">
+          <div class="range-emoji">✒️</div>
+          <h4>Ink Drawing</h4>
+          <p>Black pen art — fineliner work, detailed and slow. It's the opposite of how I work in product: no undo, no iteration, just commitment to each line. I find that balance useful.</p>
+        </div>
+        <div class="range-item fade-in">
+          <div class="range-emoji">🎹</div>
+          <h4>Piano</h4>
+          <p>Currently learning. I'm a complete beginner — which is a humbling and necessary experience for anyone who spends most of their day being the person with the answers.</p>
+        </div>
+        <div class="range-item fade-in">
+          <div class="range-emoji">🚗</div>
+          <h4>Driving</h4>
+          <p>Learned to drive in my late twenties. Another thing I kept deferring until I didn't. Sometimes the most useful skill is just deciding to finally do the thing.</p>
+        </div>
+        <div class="range-item fade-in">
+          <div class="range-emoji">🎨</div>
+          <h4>Watercolour (Failed)</h4>
+          <p>I tried watercolour painting and genuinely couldn't get it. I'm leaving this in because I think being honest about where you failed is more interesting than pretending everything worked.</p>
+        </div>
+      </div>
+      <div class="range-quote fade-in">
+        "I failed at watercolour and kept going. That's the same instinct I bring to hard product problems."
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="writing">
+    <div class="container">
+      <div class="section-label">How I Think in Public</div>
+      <h2 class="section-heading">Writing &<br><em>perspectives</em></h2>
+      <div class="writing-grid">
+        <div class="writing-card writing-placeholder fade-in">
+          <div class="writing-platform">LinkedIn · Coming Soon</div>
+          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
+        </div>
+        <div class="writing-card writing-placeholder fade-in">
+          <div class="writing-platform">LinkedIn · Coming Soon</div>
+          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
+        </div>
+        <div class="writing-card writing-placeholder fade-in">
+          <div class="writing-platform">LinkedIn · Coming Soon</div>
+          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-heading">Ready to<br>build something</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-desc">
+            I'm looking for Lead PM or Senior PM roles in B2B SaaS, platform, or integrations — where the product work is genuinely technical and decisions carry real operational weight.
+          </p>
+          <div class="contact-locations">
+            <span class="contact-loc">Mumbai</span>
+            <span class="contact-loc">Pune</span>
+            <span class="contact-loc">Bengaluru</span>
+            <span class="contact-loc">Japan (relocation supported)</span>
+          </div>
+          <a href="mailto:hello@vinayasawant.vercel.app" class="contact-cta">Get in Touch →</a>
+        </div>
+        <div>
+          <div class="contact-links">
+            <div class="contact-link-item">
+              <span class="cl-label">Email</span>
+              <a href="mailto:hello@vinayasawant.vercel.app">hello@vinayasawant.vercel.app</a>
+            </div>
+            <div class="contact-link-item">
+              <span class="cl-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank">linkedin.com/in/vinayasawant</a>
+            </div>
+            <div class="contact-link-item">
+              <span class="cl-label">Phone</span>
+              <a href="tel:+919757182692">+91 97571 82692</a>
+            </div>
+          </div>
+          <div class="contact-roles">
+            <div class="contact-roles-label">Open to these roles</div>
+            <ul class="contact-role-list">
+              <li>Lead Product Manager / Senior PM</li>
+              <li>Platform PM</li>
+              <li>Integrations PM</li>
+              <li>B2B SaaS PM</li>
+              <li>AI PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Vinaya Sawant · Built with intention
+  </footer>
+
+  <script>
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Work card expand
+    function toggleWork(btn) {
+      const expand = btn.nextElementSibling;
+      const isOpen = expand.classList.contains('open');
+      expand.classList.toggle('open', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.querySelector('.arrow').textContent = isOpen ? '↓' : '↑';
+    }
+  </script>
+
+</body>
+</html>
