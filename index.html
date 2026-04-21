@@ -100,14 +100,15 @@
 
     .hero-name {
       font-family: var(--f-display);
-      font-size: clamp(4rem, 10vw, 9rem);
-      line-height: 0.95;
+      font-size: clamp(3.5rem, 8.2vw, 7.25rem);
+      line-height: 0.9;
       letter-spacing: -0.02em;
       margin-bottom: 2rem;
+      color: var(--accent);
     }
     .hero-name em {
       font-style: italic;
-      color: var(--accent);
+      color: inherit;
     }
     .hero-tagline {
       font-size: clamp(1rem, 1.8vw, 1.2rem);
@@ -432,6 +433,14 @@
 
     /* ── WRITING ── */
     #writing { background: var(--paper); }
+    .writing-intro {
+      max-width: 720px;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: -1.25rem 0 2.5rem;
+      font-weight: 300;
+    }
     .writing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -451,6 +460,12 @@
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 1rem;
+    }
+    .writing-card h3 {
+      font-family: var(--f-display);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
     }
     .writing-card p {
       font-size: 0.88rem;
@@ -640,6 +655,58 @@
       .range-item:last-child { border-bottom: none; }
     }
 
+    /* ── SIDE NAV ── */
+    .side-nav {
+      position: fixed;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .side-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .side-nav-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+    .side-nav-item:hover .side-nav-dot,
+    .side-nav-item.active .side-nav-dot {
+      background: var(--accent);
+      transform: scale(1.5);
+    }
+    .side-nav-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .side-nav-item:hover .side-nav-label,
+    .side-nav-item.active .side-nav-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (max-width: 1100px) {
+      .side-nav { display: none; }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: #080808;
@@ -683,6 +750,42 @@
   </style>
 </head>
 <body>
+
+  <!-- SIDE NAV -->
+  <nav class="side-nav" id="sideNav">
+    <a href="#hero" class="side-nav-item active" data-section="hero">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Top</span>
+    </a>
+    <a href="#story" class="side-nav-item" data-section="story">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Story</span>
+    </a>
+    <a href="#experience" class="side-nav-item" data-section="experience">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Experience</span>
+    </a>
+    <a href="#work" class="side-nav-item" data-section="work">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Work</span>
+    </a>
+    <a href="#skills" class="side-nav-item" data-section="skills">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Skills</span>
+    </a>
+    <a href="#range" class="side-nav-item" data-section="range">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Range</span>
+    </a>
+    <a href="#writing" class="side-nav-item" data-section="writing">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Writing</span>
+    </a>
+    <a href="#contact" class="side-nav-item" data-section="contact">
+      <span class="side-nav-dot"></span>
+      <span class="side-nav-label">Contact</span>
+    </a>
+  </nav>
 
   <!-- NAV -->
   <nav>
@@ -765,7 +868,7 @@
           <span class="story-num">03</span>
           <div class="story-card-label">What Drives Me</div>
           <h3>Technical depth over feature count</h3>
-          <p>I gravitate toward platforms with real complexity: systems where decisions compound, integrations where details matter, and products where good architecture has long-term consequences. Open to Mumbai, Pune, Bengaluru, and Japan if relocation is supported.</p>
+          <p>I gravitate toward platforms with real complexity: systems where decisions compound, integrations where details matter, and products where good architecture has long-term consequences.</p>
         </div>
       </div>
     </div>
@@ -846,12 +949,12 @@
       <h2 class="section-heading">Three products,<br><em>owned end-to-end</em></h2>
       <div class="work-grid">
 
-        <!-- Card 1 -->
+        <!-- Card 1: Konnect -->
         <div class="work-card fade-in">
           <div class="work-num">01</div>
           <div class="work-type">Platform Architecture · B2B SaaS</div>
           <h3>Konnect v2 Rebuild</h3>
-          <p>Every new marketplace integration was a custom engineering project, no shared primitives, no reuse, no way to scale.</p>
+          <p>Every new marketplace integration was a custom engineering project — no shared primitives, no reuse, no way to scale.</p>
           <div class="work-metrics">
             <div class="work-metric">
               <div class="m-num">20+</div>
@@ -873,20 +976,20 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2: CheckApp -->
         <div class="work-card fade-in">
           <div class="work-num">02</div>
-          <div class="work-type">[ Category · Context ]</div>
-          <h3>CheckApp</h3>
-          <p>[ Problem statement: one line explaining why this work mattered ]</p>
+          <div class="work-type">0→1 Product · Healthcare SaaS</div>
+          <h3>CheckApp IPD Workflow</h3>
+          <p>Hospital IPD operations were manual and fragmented, with no system tying together admission, nursing, EMR, procedures, and discharge.</p>
           <div class="work-metrics">
             <div class="work-metric">
-              <div class="m-num">[ # ]</div>
-              <div class="m-label">[ Metric label ]</div>
+              <div class="m-num">35%</div>
+              <div class="m-label">Increase in customer satisfaction</div>
             </div>
             <div class="work-metric">
-              <div class="m-num">[ # ]</div>
-              <div class="m-label">[ Metric label ]</div>
+              <div class="m-num">20%</div>
+              <div class="m-label">Lift in renewal rate</div>
             </div>
           </div>
           <button class="work-toggle" onclick="toggleWork(this)">
@@ -894,13 +997,13 @@
           </button>
           <div class="work-expand">
             <div class="work-section-title">The Approach</div>
-            <p>[ What you did and how ]</p>
+            <p>Started with 25+ hospital visits and 100+ stakeholder interviews across doctors, nurses, and admins. Built 10 personas and full journey maps across OPD/IPD workflows before writing a single requirement. Designed the end-to-end IPD flow from scratch: admission, nurse handoff, EMR, procedure, and discharge. Authored 50+ PRDs, BRDs, and FRDs, manually tested 25+ releases, and supported 800+ product demos that helped generate 1,800+ leads through exhibitions.</p>
             <div class="work-section-title">The Outcome</div>
-            <p>[ Results with metrics ]</p>
+            <p>Drove a 20% improvement in renewal rate and a 35% increase in customer satisfaction, earning an Excellence Award for visible impact. More importantly, it shaped the field-research rigor and systems thinking that still define how I approach complex platform products.</p>
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3: METRO -->
         <div class="work-card fade-in">
           <div class="work-num">03</div>
           <div class="work-type">B2B Commerce · Reliance Retail</div>
@@ -953,15 +1056,16 @@
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-label">AI & Automation</div>
+          <div class="skill-group-label">AI-Assisted Work</div>
           <div class="skill-tags">
-            <span class="skill-tag">GPT-powered Features</span>
-            <span class="skill-tag">Prompt Engineering</span>
-            <span class="skill-tag">RAG Workflows</span>
-            <span class="skill-tag">Claude Code</span>
-            <span class="skill-tag">Cursor AI</span>
-            <span class="skill-tag">Lovable</span>
-            <span class="skill-tag">OpenAI APIs</span>
+            <span class="skill-tag">LLM-assisted PRD writing</span>
+            <span class="skill-tag">AI-powered spec generation</span>
+            <span class="skill-tag">Prompt engineering for workflows</span>
+            <span class="skill-tag">GPT-powered product features</span>
+            <span class="skill-tag">RAG workflow design</span>
+            <span class="skill-tag">Dashboard prototyping with AI</span>
+            <span class="skill-tag">Vibe coding with Cursor / Lovable</span>
+            <span class="skill-tag">Claude Code for dev workflows</span>
           </div>
         </div>
         <div class="skill-group">
@@ -977,12 +1081,14 @@
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-label">Execution & Tools</div>
+          <div class="skill-group-label">PM Execution</div>
           <div class="skill-tags">
-            <span class="skill-tag">PRD / BRD</span>
+            <span class="skill-tag">PRD / BRD / FRD</span>
             <span class="skill-tag">Roadmapping</span>
-            <span class="skill-tag">OKRs</span>
+            <span class="skill-tag">OKR Setting</span>
+            <span class="skill-tag">Sprint Planning</span>
             <span class="skill-tag">Release Management</span>
+            <span class="skill-tag">Stakeholder Management</span>
             <span class="skill-tag">Jira</span>
             <span class="skill-tag">Figma</span>
             <span class="skill-tag">Postman</span>
@@ -1041,22 +1147,26 @@
     <div class="container">
       <div class="section-label">How I Think in Public</div>
       <h2 class="section-heading">Writing &<br><em>perspectives</em></h2>
+      <p class="writing-intro fade-in">I use LinkedIn for short-form writing on platform product management, AI-assisted execution, and lessons from building products from zero to scale. This section now points directly to that stream.</p>
       <div class="writing-grid">
-        <div class="writing-card writing-placeholder fade-in">
-          <div class="writing-platform">LinkedIn · Coming Soon</div>
-          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
-          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
-        </div>
-        <div class="writing-card writing-placeholder fade-in">
-          <div class="writing-platform">LinkedIn · Coming Soon</div>
-          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
-          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
-        </div>
-        <div class="writing-card writing-placeholder fade-in">
-          <div class="writing-platform">LinkedIn · Coming Soon</div>
-          <p>Featured post will appear here. Share your LinkedIn posts to add them.</p>
-          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" class="writing-link">View on LinkedIn →</a>
-        </div>
+        <article class="writing-card fade-in">
+          <div class="writing-platform">LinkedIn · Platform Product</div>
+          <h3>How I think about systems, architecture, and integration trade-offs</h3>
+          <p>Notes from building reusable primitives, integration workflows, and platform capabilities where product choices have long-term technical consequences.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" rel="noreferrer" class="writing-link">Read on LinkedIn →</a>
+        </article>
+        <article class="writing-card fade-in">
+          <div class="writing-platform">LinkedIn · AI Workflows</div>
+          <h3>Practical ways I use AI in product management work</h3>
+          <p>Experiments with PRD writing, research synthesis, spec drafting, and the line between accelerating execution and outsourcing product judgment.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" rel="noreferrer" class="writing-link">Explore the posts →</a>
+        </article>
+        <article class="writing-card fade-in">
+          <div class="writing-platform">LinkedIn · Career Perspective</div>
+          <h3>Lessons from moving between 0→1 healthcare, commerce, and SaaS</h3>
+          <p>Reflections on ambiguity, field research, stakeholder management, and the habits that transfer across very different product environments.</p>
+          <a href="https://www.linkedin.com/in/vinayasawant/" target="_blank" rel="noreferrer" class="writing-link">Visit my profile →</a>
+        </article>
       </div>
     </div>
   </section>
@@ -1071,12 +1181,6 @@
           <p class="contact-desc">
             I work best on technically complex platforms where product decisions have real architectural consequences. B2B SaaS, integrations, marketplace infrastructure. If that's what you're building, let's talk.
           </p>
-          <div class="contact-locations">
-            <span class="contact-loc">Mumbai</span>
-            <span class="contact-loc">Pune</span>
-            <span class="contact-loc">Bengaluru</span>
-            <span class="contact-loc">Japan (relocation supported)</span>
-          </div>
           <a href="mailto:hello@vinayasawant.vercel.app" class="contact-cta">Get in Touch →</a>
         </div>
         <div>
@@ -1103,6 +1207,12 @@
               <li>B2B SaaS PM</li>
               <li>AI PM</li>
             </ul>
+            <div class="contact-roles-label" style="margin-top: 1.25rem;">Based in / open to</div>
+            <ul class="contact-role-list">
+              <li>Mumbai (current)</li>
+              <li>Pune · Bengaluru</li>
+              <li>Japan — open to relocation if supported</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1124,6 +1234,20 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Side nav active state
+    const sections = document.querySelectorAll('section[id]');
+    const sideLinks = document.querySelectorAll('.side-nav-item');
+    const sideObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sideLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.side-nav-item[data-section="${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(s => sideObserver.observe(s));
 
     // Work card expand
     function toggleWork(btn) {
